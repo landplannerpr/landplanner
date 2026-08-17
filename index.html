@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LandPlanner</title>
+<link rel="icon" href="data:,">
+<script>
+  // Route by the browser's own language preference. Only ever chooses
+  // between the two pages this site actually has — everything else falls
+  // back to English.
+  var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  location.replace(lang.indexOf('es') === 0 ? 'es.html' : 'en.html');
+</script>
+<meta http-equiv="refresh" content="0; url=en.html">
+</head>
+<body style="background:#000;color:#8b949e;font:14px ui-sans-serif,sans-serif;padding:40px;">
+  <p>
+    Redirecting… If you are not redirected automatically, choose a language:
+    <a href="en.html" style="color:#5ce1ff">English</a> ·
+    <a href="es.html" style="color:#5ce1ff">Español</a>
+  </p>
+</body>
+</html>

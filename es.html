@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LandPlanner — Modelos 3D Interactivos de Terreno a partir de LiDAR</title>
+<meta name="description" content="LandPlanner convierte datos LiDAR en un modelo 3D interactivo de su propiedad — terreno, curvas de nivel, drenaje, vegetación y estructuras, explorable desde cualquier navegador. Para dueños de terreno, gobierno, agentes inmobiliarios, agrimensores, ingenieros y arquitectos.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Land<span class="dot">Planner</span></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#product">Producto</a></li>
+        <li><a href="#who">Para quién es</a></li>
+        <li><a href="#how">Cómo funciona</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+        <li><a href="../index.html">Demo en vivo ↗</a></li>
+        <li class="lang-li"><a href="en.html">English</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <a href="en.html">EN</a>
+        <a href="es.html" class="active">ES</a>
+      </div>
+      <a class="btn btn-primary" href="#contact">Solicitar Demo</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menú" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" style="justify-content:center">Inteligencia 3D de terrenos a partir de LiDAR</p>
+        <h1>Vea el terreno tal como es — antes de que alguien lo pise.</h1>
+        <p class="lede">
+          LandPlanner convierte datos LiDAR en un modelo 3D interactivo de cualquier parcela: el relieve
+          real del terreno, curvas de nivel de precisión, patrones de drenaje y — donde exista un modelo
+          de superficie — la vegetación y las estructuras que están sobre él. Explórelo desde el navegador,
+          en 3D o en vista en planta, y obtenga un perfil de elevación exacto donde trace una línea.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="#contact">Solicitar una Demostración</a>
+          <a class="btn btn-ghost btn-lg" href="../index.html">Explorar un Modelo en Vivo ↗</a>
+        </div>
+        <p class="hero-note">Sin instalaciones. Sin plugins. Funciona en el navegador que ya tiene abierto.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="hero-shot">
+        <img src="img/hero.png" alt="Modelo 3D interactivo mostrando relieve sombreado, curvas de nivel, una red de drenaje y el límite de una parcela sobre una propiedad montañosa.">
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap stats-grid">
+      <div class="stat"><b>0.5 m</b><span>Resolución LiDAR del terreno</span></div>
+      <div class="stat"><b>1 pie</b><span>Precisión de curvas de nivel</span></div>
+      <div class="stat"><b>3D + 2D</b><span>Interactivo, lado a lado</span></div>
+      <div class="stat"><b>0</b><span>Instalaciones requeridas</span></div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTO / CARACTERÍSTICAS ============ -->
+  <section class="block" id="product">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">El producto</p>
+        <h2>Cada capa que una decisión sobre el terreno realmente necesita.</h2>
+        <p class="lede" style="margin-inline:auto">
+          No es un render estático — es un modelo funcional. Cada característica a continuación es en
+          vivo, ajustable, y está construida sobre los datos reales de elevación de la parcela, no una
+          aproximación estilizada.
+        </p>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-copy">
+          <p class="eyebrow">Terreno y relieve</p>
+          <h3>Sombreado fotorrealista, fiel al levantamiento</h3>
+          <p>
+            El modelo se sombrea píxel por píxel a partir de la cuadrícula LiDAR real — no es una textura
+            colocada sobre una malla simplificada. Ajuste el azimut y la altitud del sol para ver cómo se
+            lee una pendiente en distintos momentos del día, aumente la exageración vertical para hacer
+            evidentes cambios sutiles de nivel, y active un tinte hipsométrico de elevación para leer el
+            relieve de toda la propiedad de un vistazo.
+          </p>
+          <ul class="feature-list">
+            <li>Posición solar y sombreado en tiempo real, no una imagen fija</li>
+            <li>Exageración vertical para cambios sutiles de pendiente</li>
+            <li>Rampa de color por elevación con leyenda en vivo</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-hillshade.png" alt="Vista 3D de relieve sombreado con controles de ángulo solar y relieve visibles en el panel lateral.">
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-copy">
+          <p class="eyebrow">Curvas de nivel</p>
+          <h3>Curvas de 1 pie, generadas de la cuadrícula original</h3>
+          <p>
+            Las curvas de nivel se trazan directamente de los datos de elevación a un intervalo real de
+            1 pie — cientos de niveles donde el proyecto lo requiera, filtrados automáticamente en niveles
+            mayor/índice/fino para que el mapa se mantenga legible ya sea que esté viendo toda la
+            propiedad o una sola plataforma.
+          </p>
+          <ul class="feature-list">
+            <li>Intervalo completo de 1 pie disponible bajo demanda, en cualquier nivel de zoom</li>
+            <li>Niveles filtrados automáticamente mantienen el mapa legible al alejar</li>
+            <li>Oculte el terreno por completo para trabajar solo con las curvas de nivel</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-contours.png" alt="Curvas de nivel densas de un pie sobre una vista en planta de la propiedad.">
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-copy">
+          <p class="eyebrow">Drenaje</p>
+          <h3>Hacia dónde va realmente el agua</h3>
+          <p>
+            Un modelo hidrológico traza la dirección y acumulación de flujo sobre toda la superficie, y
+            luego dibuja la red de drenaje resultante directamente sobre el terreno — con un grosor
+            proporcional para que los cauces principales resalten sobre los menores. Útil en el momento en
+            que la escorrentía pluvial, la erosión, o la ubicación de un campo séptico entran en la
+            conversación.
+          </p>
+          <ul class="feature-list">
+            <li>Red de drenaje completa, filtrable por área de contribución</li>
+            <li>El grosor del cauce escala según el tamaño de la cuenca</li>
+            <li>Se superpone limpiamente sobre el terreno, las curvas de nivel o un plano vacío</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-drainage.png" alt="Red de drenaje y escorrentía renderizada como cauces azules sobre el terreno, con la superficie del DEM oculta.">
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-copy">
+          <p class="eyebrow">Modelo de superficie</p>
+          <h3>Vea la vegetación y las estructuras, no solo el suelo</h3>
+          <p>
+            Donde exista un escaneo de superficie junto al levantamiento de suelo desnudo, cambie entre
+            ambos con un clic. El terreno de suelo desnudo es la base de las curvas de nivel y el drenaje;
+            el modelo de superficie muestra lo que realmente está encima — copas de árboles, techos,
+            cualquier cosa que el primer retorno del láser haya captado. Comparar ambos revela la altura
+            de la vegetación y la huella de las estructuras sin una segunda visita al sitio.
+          </p>
+          <ul class="feature-list">
+            <li>Cambio con un clic entre suelo desnudo y modelo de superficie</li>
+            <li>Las líneas de referencia (curvas, drenaje, límite) se mantienen fijas para comparar directamente</li>
+            <li>Revela al instante la altura de la vegetación y la huella de las estructuras</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-dsm.png" alt="Vista del modelo de superficie mostrando la textura de la copa de los árboles y estructuras, con una leyenda de elevación por color.">
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-copy">
+          <p class="eyebrow">Perfiles de sección</p>
+          <h3>Trace una línea, obtenga un perfil — y expórtelo</h3>
+          <p>
+            Arrastre una línea en cualquier parte del modelo y un perfil de sección transversal del
+            terreno se genera en vivo debajo de ella — largo, elevación mínima/máxima, relieve y
+            pendiente, todo leído directamente de la cuadrícula LiDAR. Haga zoom en cualquier tramo para
+            resolver pequeñas terrazas que una vista completa de la propiedad no puede mostrar, y luego
+            descargue la gráfica como imagen o las muestras en bruto como CSV con coordenadas reales.
+          </p>
+          <ul class="feature-list">
+            <li>Perfil en vivo mientras traza — sin un paso separado de exportación o reproceso</li>
+            <li>Haga zoom en un tramo para resolver cambios finos de pendiente</li>
+            <li>Exportación a PNG y CSV con un clic, coordenadas incluidas</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-cross-section.png" alt="Gráfica de sección transversal del terreno trazada sobre la propiedad, con perfil de elevación y botones de exportación.">
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-copy">
+          <p class="eyebrow">Vista en 2D</p>
+          <h3>El mismo modelo, aplanado a un plano</h3>
+          <p>
+            Cambie de 3D a una vista de plano ortográfico, orientado al norte, de los mismos datos
+            exactos — el formato de presentación que un revisor de permisos, una ficha de venta, o un
+            exhibit de agrimensura realmente espera, sin perder el sombreado, las curvas de nivel ni el
+            detalle de drenaje que hay debajo.
+          </p>
+          <ul class="feature-list">
+            <li>Plano ortográfico real, no una captura en perspectiva</li>
+            <li>Todas las capas se mantienen activas — nada es exclusivo de 3D</li>
+            <li>Desplácese y haga zoom exactamente como en un mapa conocido</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-2d-map.png" alt="Vista de plano ortográfico 2D de la propiedad con curvas de nivel, drenaje y el límite de la parcela.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARA QUIÉN ES ============ -->
+  <section class="block tight" id="who">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Para quién es</p>
+        <h2>Hecho para quien deba tomar una decisión sobre un terreno.</h2>
+      </div>
+
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-icon">🏡</div>
+          <h3>Dueños de Terreno</h3>
+          <p>Vea exactamente lo que posee — pendiente, drenaje, área utilizable — antes de limpiar, subdividir, construir o vender.</p>
+          <a class="card-link" href="?role=landowner#contact">Solicitar una demo →</a>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">🏛️</div>
+          <h3>Gobierno y municipios</h3>
+          <p>Evalúe el drenaje, la erosión y la exposición a inundaciones para permisos y planificación sin una visita de campo por cada parcela.</p>
+          <a class="card-link" href="?role=government#contact">Solicitar una demo →</a>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">🏠</div>
+          <h3>Agentes Inmobiliarios</h3>
+          <p>Muéstrele al comprador la topografía real de un solar antes de que lo visite — una ficha más fuerte que un plano catastral tradicional.</p>
+          <a class="card-link" href="?role=realtor#contact">Solicitar una demo →</a>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">📐</div>
+          <h3>Agrimensores</h3>
+          <p>Entregue a sus clientes un modelo interactivo junto a su agrimensura, y obtenga secciones transversales exportables en minutos, no en una visita adicional.</p>
+          <a class="card-link" href="?role=surveyor#contact">Solicitar una demo →</a>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">⚙️</div>
+          <h3>Ingenieros</h3>
+          <p>Verifique la nivelación, la dirección del drenaje y las secciones del sitio contra datos reales de elevación antes de que sea un diseño sellado.</p>
+          <a class="card-link" href="?role=engineer#contact">Solicitar una demo →</a>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">📏</div>
+          <h3>Arquitectos</h3>
+          <p>Entienda la vegetación, las estructuras y la pendiente real del solar antes del primer estudio volumétrico, directo del LiDAR.</p>
+          <a class="card-link" href="?role=architect#contact">Solicitar una demo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO FUNCIONA ============ -->
+  <section class="block tight" id="how">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Cómo funciona</p>
+        <h2>De datos LiDAR en bruto a un modelo listo para compartir — en tres pasos.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Envíenos los datos</h3>
+          <p>Un DEM (o DSM) derivado de LiDAR y, si lo tiene, el límite de la parcela. ¿Ya tiene un vuelo LiDAR? Trabajamos con lo que tenga. ¿Aún no lo tiene? Podemos ayudarle a conseguirlo.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Construimos su modelo</h3>
+          <p>El terreno, las curvas de nivel, el drenaje y — cuando esté disponible — el modelo de superficie se generan y se ajustan a la propiedad, y se publican como una página interactiva autónoma, sin instalación.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Explore, analice, comparta</h3>
+          <p>Envíe el enlace a un cliente, un revisor, o un comprador. Trace secciones transversales, exporte datos, active y desactive capas — sin software que instalar, sin cuenta requerida para verlo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Traiga su parcela. Nosotros construimos el modelo.</h2>
+      <p class="lede">Quince minutos suelen bastar para saber si somos la solución correcta — y puede probar la demo en vivo usted mismo antes de esa llamada.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary btn-lg" href="#contact">Solicitar una Demostración</a>
+        <a class="btn btn-ghost btn-lg" href="../index.html">Explorar un Modelo en Vivo ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO / FORMULARIO ============ -->
+  <section class="block" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow">Contáctenos</p>
+        <h2>Cuéntenos sobre la propiedad.</h2>
+        <p class="lede">
+          Cuéntenos con qué está trabajando y para qué lo necesita — le daremos seguimiento con los
+          próximos pasos, incluyendo qué datos necesitaríamos de su parte si aún no tiene LiDAR.
+        </p>
+        <div class="contact-detail">
+          <div>
+            <span class="label">Correo electrónico</span>
+            <a href="mailto:hello@landplanner.io">hello@landplanner.io</a>
+          </div>
+          <div>
+            <span class="label">Tiempo de respuesta</span>
+            <strong>Dentro de 1 día laborable</strong>
+          </div>
+        </div>
+        <div class="trust-row">
+          <span class="trust-chip">Precisión LiDAR de 0.5 m</span>
+          <span class="trust-chip">Comparación DTM + DSM</span>
+          <span class="trust-chip">Entrega sin instalación</span>
+          <span class="trust-chip">Datos exportables</span>
+        </div>
+      </div>
+
+      <!--
+        Aún no hay un backend conectado — este formulario se envía mediante
+        una acción mailto:, que abre el cliente de correo del visitante con
+        los campos ya completados. Antes de publicar esto en producción,
+        reemplace la acción del formulario por un endpoint real (Formspree,
+        Netlify Forms, HubSpot, etc.) para que los envíos lleguen a un lugar
+        permanente en vez de depender del cliente de correo del visitante.
+      -->
+      <form class="lead-form" action="mailto:hello@landplanner.io" method="post" enctype="text/plain">
+        <div class="form-row">
+          <div class="field">
+            <label for="field-name">Nombre completo</label>
+            <input id="field-name" name="Nombre" type="text" placeholder="Jane Rivera" required>
+          </div>
+          <div class="field">
+            <label for="field-email">Correo electrónico</label>
+            <input id="field-email" name="Correo" type="email" placeholder="jane@example.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="field-phone">Teléfono <span style="opacity:.6">(opcional)</span></label>
+            <input id="field-phone" name="Telefono" type="tel" placeholder="(787) 000-0000">
+          </div>
+          <div class="field">
+            <label for="field-role">Soy…</label>
+            <select id="field-role" name="Rol">
+              <option value="landowner">Dueño de terreno</option>
+              <option value="government">Gobierno / municipio</option>
+              <option value="realtor">Agente inmobiliario</option>
+              <option value="surveyor">Agrimensor</option>
+              <option value="engineer">Ingeniero</option>
+              <option value="architect">Arquitecto</option>
+              <option value="other">Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="field full">
+          <label for="field-message">¿Qué necesita lograr?</label>
+          <textarea id="field-message" name="Mensaje" placeholder="Ubicación de la propiedad, qué datos ya tiene, y para qué necesita el modelo."></textarea>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg" type="submit">Solicitar Mi Demostración</button>
+        <p class="form-foot">Sin compromiso. Nunca compartiremos su información.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ PREGUNTAS FRECUENTES ============ -->
+  <section class="block tight" id="faq">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Preguntas frecuentes</p>
+        <h2>Dudas comunes</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>¿Qué datos necesitan de nosotros?</summary>
+          <p>Idealmente un DEM de suelo desnudo derivado de LiDAR (y un modelo de superficie / DSM si lo tiene), además del límite de la parcela si desea que aparezca sobre el modelo. Si aún no tiene LiDAR, cuéntenos sobre la propiedad y le orientamos sobre cómo conseguirlo.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tiempo toma construir un modelo?</summary>
+          <p>Depende de la disponibilidad de los datos y el tamaño de la propiedad, pero el tiempo desde recibir un LiDAR utilizable hasta un modelo publicado y listo para compartir suele ser rápido — le daremos un estimado firme después de la llamada inicial.</p>
+        </details>
+        <details>
+          <summary>¿Necesito instalar algo para verlo?</summary>
+          <p>No. El modelo funciona completamente en un navegador web — de escritorio o móvil — sin plugins, cuentas, ni descargas necesarias para verlo o compartirlo.</p>
+        </details>
+        <details>
+          <summary>¿Puedo obtener los datos, no solo la visualización?</summary>
+          <p>Sí. La herramienta de secciones transversales exporta tanto una imagen de la gráfica como un CSV de las muestras de elevación en bruto con coordenadas reales, y los formatos de datos que usamos son archivos estándar compatibles con GIS.</p>
+        </details>
+        <details>
+          <summary>¿Se mantiene privada la información de mi propiedad?</summary>
+          <p>Sí — los modelos se construyen y se entregan por encargo, y no se publican ni se comparten más allá de lo que usted solicite.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top">Land<span class="dot">Planner</span></a>
+        <p>Modelos 3D interactivos de terreno a partir de LiDAR, hechos para quienes deben tomar decisiones sobre terrenos reales.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Producto</h4>
+          <ul>
+            <li><a href="#product">Características</a></li>
+            <li><a href="../index.html">Demo en vivo ↗</a></li>
+            <li><a href="#how">Cómo funciona</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Compañía</h4>
+          <ul>
+            <li><a href="#who">Para quién es</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Idioma</h4>
+          <ul>
+            <li><a href="en.html">English</a></li>
+            <li><a href="es.html">Español</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LandPlanner</span>
+      <span>hello@landplanner.io</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
