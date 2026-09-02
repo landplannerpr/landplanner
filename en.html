@@ -1,1 +1,456 @@
-test
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LandPlanner — Interactive 3D Terrain Models from LiDAR</title>
+<meta name="description" content="LandPlanner turns raw LiDAR into an interactive 3D model of your property — terrain, contours, drainage, canopy and structures, explorable in any browser. Built for landowners, government, realtors, surveyors, engineers and architects.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Land<span class="dot">Planner</span></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#product">Product</a></li>
+        <li><a href="#who">Who it's for</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="../index.html">Live demo ↗</a></li>
+        <li class="lang-li"><a href="es.html">Español</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <a href="en.html" class="active">EN</a>
+        <a href="es.html">ES</a>
+      </div>
+      <a class="btn btn-primary" href="#contact">Request a Demo</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" style="justify-content:center">LiDAR-powered 3D property intelligence</p>
+        <h1>See the land the way it actually sits — before anyone sets foot on it.</h1>
+        <p class="lede">
+          LandPlanner turns raw LiDAR into an interactive 3D model of any parcel: real terrain relief,
+          precision contours, drainage patterns, and — where surface data exists — the canopy and
+          structures sitting on top of it. Explore it in a browser, in 3D or as a flat plan, and pull an
+          exact elevation profile anywhere you draw a line.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="#contact">Request a Demo</a>
+          <a class="btn btn-ghost btn-lg" href="../index.html">Explore a Live Model ↗</a>
+          <a class="btn btn-ghost btn-lg" href="tel:+19394602893">Call (939) 460-2893</a>
+        </div>
+        <p class="hero-note">No installs. No plugins. Runs in the browser you already have open.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="hero-shot">
+        <img src="img/hero.png" alt="Interactive 3D terrain model showing hillshaded relief, contour lines, a drainage network and a parcel boundary over a hillside property.">
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap stats-grid">
+      <div class="stat"><b>0.5 m</b><span>LiDAR ground resolution</span></div>
+      <div class="stat"><b>1 ft</b><span>Contour precision</span></div>
+      <div class="stat"><b>3D + 2D</b><span>Interactive, side by side</span></div>
+      <div class="stat"><b>0</b><span>Installs required</span></div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT / FEATURES ============ -->
+  <section class="block" id="product">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">The product</p>
+        <h2>Every layer a site decision actually needs.</h2>
+        <p class="lede" style="margin-inline:auto">
+          Not a static render — a working model. Every feature below is live, adjustable, and built on
+          the real elevation data for the parcel, not a stylised approximation.
+        </p>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-copy">
+          <p class="eyebrow">Terrain &amp; relief</p>
+          <h3>Photoreal hillshade, true to the survey</h3>
+          <p>
+            The model is shaded per-pixel from the actual LiDAR grid — not a texture draped over a
+            simplified mesh. Adjust the sun's azimuth and altitude to see how a slope reads at different
+            times of day, dial in vertical exaggeration to make subtle grading obvious, and switch on a
+            hypsometric elevation tint to read the whole property's relief at a glance.
+          </p>
+          <ul class="feature-list">
+            <li>Real-time sun position and shading, not a baked image</li>
+            <li>Vertical exaggeration for subtle grade changes</li>
+            <li>Elevation-tinted color ramp with a live legend</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-hillshade.png" alt="3D hillshaded terrain view with sun angle and relief controls visible in the side panel.">
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-copy">
+          <p class="eyebrow">Contours</p>
+          <h3>1-foot contours, generated from the raw grid</h3>
+          <p>
+            Contour lines are cut directly from the elevation data at a true 1-foot interval — hundreds
+            of levels where a project needs them, automatically thinned to major/index/fine tiers so the
+            map stays legible whether you're looking at the whole property or a single pad.
+          </p>
+          <ul class="feature-list">
+            <li>Full 1 ft interval available on demand, any zoom level</li>
+            <li>Auto-thinned tiers keep the map readable while zoomed out</li>
+            <li>Toggle the terrain off entirely to work from contours alone</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-contours.png" alt="Dense one-foot contour lines over a flat plan view of the property.">
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-copy">
+          <p class="eyebrow">Drainage</p>
+          <h3>Where the water actually goes</h3>
+          <p>
+            A hydrology model traces flow direction and accumulation across the whole surface, then
+            renders the resulting drainage network directly on the terrain — weighted so the main
+            channels stand out from minor ones. Useful the moment stormwater, erosion, or a septic
+            field's placement is part of the conversation.
+          </p>
+          <ul class="feature-list">
+            <li>Full drainage network, filterable by contributing area</li>
+            <li>Channel weight scales with catchment size</li>
+            <li>Overlays cleanly on terrain, contours, or a bare plan</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-drainage.png" alt="Drainage and runoff network rendered as blue channels over the terrain, with the DEM surface hidden.">
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-copy">
+          <p class="eyebrow">Surface model</p>
+          <h3>See the canopy and structures, not just the ground</h3>
+          <p>
+            Where a surface scan exists alongside the bare-earth survey, switch between the two with one
+            click. The bare-earth terrain is what your contours and drainage are built from; the surface
+            model shows what's actually sitting on top of it — tree cover, rooflines, anything the laser's
+            first return hit. Comparing the two tells you canopy height and building footprints without
+            a second site visit.
+          </p>
+          <ul class="feature-list">
+            <li>One-click switch between bare earth and surface model</li>
+            <li>Reference lines (contours, drainage, boundary) stay put for direct comparison</li>
+            <li>Reveals canopy height and structure footprints instantly</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-dsm.png" alt="Surface model view showing tree canopy texture and structures, with an elevation-tinted legend.">
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-copy">
+          <p class="eyebrow">Cross-sections</p>
+          <h3>Draw a line, get a profile — and export it</h3>
+          <p>
+            Drag a line anywhere on the model and a terrain cross-section renders live underneath it —
+            length, min/max elevation, relief, grade, all read directly off the LiDAR grid. Zoom into any
+            stretch of it to resolve small terraces a full-property view can't show, then download the
+            chart as an image or the raw samples as CSV with real-world coordinates.
+          </p>
+          <ul class="feature-list">
+            <li>Live profile while you draw — no separate export/reprocess step</li>
+            <li>Zoom into a span to resolve fine grade changes</li>
+            <li>One-click PNG and CSV export, coordinates included</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-cross-section.png" alt="Terrain cross-section chart drawn across the property, with elevation profile and export buttons.">
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-copy">
+          <p class="eyebrow">2D plan view</p>
+          <h3>The same model, flattened to a plan</h3>
+          <p>
+            Switch out of 3D into an orthographic, north-up plan view of the exact same data — the
+            presentation format a permit reviewer, a listing sheet, or a survey exhibit actually expects,
+            without losing any of the shading, contours or drainage detail underneath it.
+          </p>
+          <ul class="feature-list">
+            <li>True orthographic plan, not a perspective screenshot</li>
+            <li>All layers stay active — nothing is 3D-only</li>
+            <li>Pan and zoom exactly like a familiar map view</li>
+          </ul>
+        </div>
+        <div class="feature-shot">
+          <img src="img/feature-2d-map.png" alt="Flat orthographic 2D plan view of the property with contours, drainage and the parcel boundary.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHO IT'S FOR ============ -->
+  <section class="block tight" id="who">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Who it's for</p>
+        <h2>Built for anyone who has to make a decision about a piece of land.</h2>
+      </div>
+
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-icon">🏡</div>
+          <h3>Landowners</h3>
+          <p>See exactly what you own — slope, drainage, buildable area — before you clear, subdivide, build, or sell.</p>
+          <a class="card-link" href="?role=landowner#contact">Request a demo →</a>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">🏛️</div>
+          <h3>Government &amp; municipalities</h3>
+          <p>Assess drainage, erosion and flood exposure for permitting and planning without a field visit for every parcel.</p>
+          <a class="card-link" href="?role=government#contact">Request a demo →</a>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">🏠</div>
+          <h3>Realtors</h3>
+          <p>Show buyers the real topography of a lot before they ever visit — a stronger listing than a flat plat map.</p>
+          <a class="card-link" href="?role=realtor#contact">Request a demo →</a>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">📐</div>
+          <h3>Surveyors</h3>
+          <p>Hand clients an interactive model alongside your survey, and pull exportable cross-sections in minutes, not a follow-up visit.</p>
+          <a class="card-link" href="?role=surveyor#contact">Request a demo →</a>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">⚙️</div>
+          <h3>Engineers</h3>
+          <p>Check grading, drainage direction and site cross-sections against real elevation data before it's a stamped design.</p>
+          <a class="card-link" href="?role=engineer#contact">Request a demo →</a>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">📏</div>
+          <h3>Architects</h3>
+          <p>Understand canopy, structures and true grade on a site before the first massing study, straight from LiDAR.</p>
+          <a class="card-link" href="?role=architect#contact">Request a demo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="block tight" id="how">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">How it works</p>
+        <h2>From raw LiDAR to a model you can share — three steps.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Send us the data</h3>
+          <p>A LiDAR-derived DEM (or DSM) and, if you have one, a parcel boundary. Already have LiDAR flown? We work with what you have. Don't have it yet? We can help you source it.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>We build your model</h3>
+          <p>Terrain, contours, drainage and — where available — the surface model are generated and tuned for the property, then deployed as a self-contained, no-install interactive page.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Explore, analyze, share</h3>
+          <p>Send the link to a client, a reviewer, or a buyer. Draw cross-sections, export data, toggle layers — no software to install, no account required to view it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Bring your own parcel. We'll build the model.</h2>
+      <p class="lede">Fifteen minutes is usually enough to tell you whether we're a fit — and you can try the live demo yourself before that call.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary btn-lg" href="#contact">Request a Demo</a>
+        <a class="btn btn-ghost btn-lg" href="../index.html">Explore a Live Model ↗</a>
+        <a class="btn btn-ghost btn-lg" href="tel:+19394602893">Call (939) 460-2893</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / LEAD FORM ============ -->
+  <section class="block" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Tell us about the property.</h2>
+        <p class="lede">
+          Share what you're working with and what you need it for — we'll follow up with next steps,
+          including what data we'd need from you if you don't have LiDAR yet.
+        </p>
+        <div class="contact-detail">
+          <div>
+            <span class="label">Email</span>
+            <a href="mailto:hello@landplanner.io">hello@landplanner.io</a>
+          </div>
+          <div>
+            <span class="label">Phone</span>
+            <a href="tel:+19394602893">(939) 460-2893</a>
+          </div>
+          <div>
+            <span class="label">Response time</span>
+            <strong>Within 1 business day</strong>
+          </div>
+        </div>
+        <div class="trust-row">
+          <span class="trust-chip">0.5 m LiDAR precision</span>
+          <span class="trust-chip">DTM + DSM comparison</span>
+          <span class="trust-chip">No-install delivery</span>
+          <span class="trust-chip">Exportable data</span>
+        </div>
+      </div>
+
+      <!--
+        No backend is wired up yet — this submits via a mailto: action, which
+        opens the visitor's email client with the fields pre-filled. Before
+        this goes live, swap the form's action for a real endpoint (Formspree,
+        Netlify Forms, HubSpot, etc.) so submissions land somewhere durable
+        instead of depending on the visitor's own mail client.
+      -->
+      <form class="lead-form" action="mailto:hello@landplanner.io" method="post" enctype="text/plain">
+        <div class="form-row">
+          <div class="field">
+            <label for="field-name">Full name</label>
+            <input id="field-name" name="Name" type="text" placeholder="Jane Rivera" required>
+          </div>
+          <div class="field">
+            <label for="field-email">Email</label>
+            <input id="field-email" name="Email" type="email" placeholder="jane@example.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="field-phone">Phone <span style="opacity:.6">(optional)</span></label>
+            <input id="field-phone" name="Phone" type="tel" placeholder="(787) 000-0000">
+          </div>
+          <div class="field">
+            <label for="field-role">I am a…</label>
+            <select id="field-role" name="Role">
+              <option value="landowner">Landowner</option>
+              <option value="government">Government / municipality</option>
+              <option value="realtor">Realtor</option>
+              <option value="surveyor">Surveyor</option>
+              <option value="engineer">Engineer</option>
+              <option value="architect">Architect</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field full">
+          <label for="field-message">What are you trying to do?</label>
+          <textarea id="field-message" name="Message" placeholder="Property location, what data you already have, and what you need the model for."></textarea>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg" type="submit">Request My Demo</button>
+        <p class="form-foot">No obligation. We'll never share your information.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="block tight" id="faq">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">FAQ</p>
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>What data do you need from us?</summary>
+          <p>Ideally a LiDAR-derived bare-earth DEM (and a surface model / DSM if you have one), plus a parcel boundary if you want it draped on the model. If you don't have LiDAR yet, tell us the property and we'll advise on sourcing it.</p>
+        </details>
+        <details>
+          <summary>How long does it take to get a model built?</summary>
+          <p>It depends on data availability and property size, but turnaround from receiving usable LiDAR to a deployed, shareable model is typically fast — we'll give you a firm estimate after the intro call.</p>
+        </details>
+        <details>
+          <summary>Do I need to install anything to view it?</summary>
+          <p>No. The model runs entirely in a web browser — desktop or mobile — with no plugins, accounts, or downloads required to view or share it.</p>
+        </details>
+        <details>
+          <summary>Can I get the underlying data out, not just the visualization?</summary>
+          <p>Yes. The cross-section tool exports both a chart image and a CSV of the raw elevation samples with real-world coordinates, and the source data formats we use are standard GIS-compatible files.</p>
+        </details>
+        <details>
+          <summary>Is my property data kept private?</summary>
+          <p>Yes — models are built and delivered per engagement and are not published or shared beyond what you ask for.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top">Land<span class="dot">Planner</span></a>
+        <p>Interactive 3D terrain models from LiDAR, built for the people who have to make decisions about real land.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#product">Features</a></li>
+            <li><a href="../index.html">Live demo ↗</a></li>
+            <li><a href="#how">How it works</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#who">Who it's for</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Language</h4>
+          <ul>
+            <li><a href="en.html">English</a></li>
+            <li><a href="es.html">Español</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LandPlanner</span>
+      <span>hello@landplanner.io</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
